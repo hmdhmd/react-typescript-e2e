@@ -1,5 +1,5 @@
 {
-  "name": "advent_e2e_typescript",
+  "name": "react_typescript_e2e",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,10 +17,16 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts -r @cypress/instrument-cra start",
+    "cy:open": "cross-env NODE_PATH=src cypress open",
+    "cy:run": "cross-env NODE_PATH=src cypress run --headless"
+  },
+  "nyc": {
+    "report-dir": "e2e/coverage",
+    "reporter": [
+      "text",
+      "lcov"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +45,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@cypress/instrument-cra": "^1.4.0",
+    "cross-env": "^7.0.3",
+    "cypress": "^6.1.0",
+    "nyc": "^15.1.0"
   }
 }
