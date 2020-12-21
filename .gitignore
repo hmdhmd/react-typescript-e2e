@@ -22,4 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# addition
 .eslintcache
+/e2e/node_modules
+/e2e/coverage
+/e2e/videos
+/.nyc_output

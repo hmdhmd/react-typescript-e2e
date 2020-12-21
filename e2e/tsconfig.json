@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "es6",
+    "noEmit": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "isolatedModules": false,
+    "resolveJsonModule": true,
+    "baseUrl": "../src",
+    "jsx": "react",
+    "skipLibCheck": true,
+    "types": ["cypress"]
+},
+  "include": [
+    "**/*.*"
+  ]
+}
