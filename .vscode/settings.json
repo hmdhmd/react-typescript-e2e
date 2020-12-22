@@ -1,0 +1,31 @@
+{
+  "css.validate": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "eslint.packageManager": "yarn",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "stylelint.autoFixOnSave": true,
+  "stylelint.configOverrides": {
+    "ignoreFiles": [
+      "node_modules/**/*.*",
+      "e2e/node_modules/**/*.*"
+    ]
+  },
+  "stylelint.enable": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "eslint.workingDirectories": [
+    "./",
+    "./e2e"
+  ],
+}

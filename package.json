@@ -7,19 +7,23 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
+    "@types/node": "^14.14.14",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts -r @cypress/instrument-cra start",
-    "cy:open": "cross-env NODE_PATH=src cypress open",
-    "cy:run": "cross-env NODE_PATH=src cypress run --headless"
+    "cy:open": "cross-env NODE_PATH=src cypress open --env failOnSnapshotDiff=false",
+    "cy:run": "cross-env NODE_PATH=src cypress run --headless  --env failOnSnapshotDiff=false",
+    "cy:snap": "cross-env NODE_PATH=src cypress run --headless",
+    "cy:snap:update": "cross-env NODE_PATH=src cypress run --headless --env updateSnapshots=true",
+    "cy:run:chrome": "cross-env NODE_PATH=src cypress run --headless --browser chrome --env failOnSnapshotDiff=false",
+    "cy:run:firefox": "cross-env NODE_PATH=src cypress run --headless --browser firefox --env failOnSnapshotDiff=false"
   },
   "nyc": {
     "report-dir": "e2e/coverage",
@@ -47,9 +51,12 @@
     ]
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.8.8",
     "@cypress/instrument-cra": "^1.4.0",
     "cross-env": "^7.0.3",
-    "cypress": "^6.1.0",
+    "cypress": "6.1.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
     "nyc": "^15.1.0"
   }
 }
